@@ -1,24 +1,18 @@
 {
-  "name": "myportfoliov-2",
-  "version": "0.0.0",
+  "name": "james-portfolio",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vue-tsc --build && vite build",
     "preview": "vite preview",
-    "build-only": "vite build",
+    "deploy": "vite build && gh-pages -d dist",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "lint": "eslint . --fix --cache"
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "gsap": "^3.13.0",
-    "pinia": "^3.0.4",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
   },
@@ -33,6 +27,7 @@
     "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",
     "eslint-plugin-vue": "~10.5.1",
+    "gh-pages": "^6.3.0",
     "jiti": "^2.6.1",
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
